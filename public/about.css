@@ -1,0 +1,747 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between; /* Space between logo and navigation */
+    align-items: center; /* Center items vertically */
+    width: 100%;
+    padding: 20px;
+    color: white;
+    font-family: 'Rubik', sans-serif;
+}
+
+.logo img {
+    height: auto; /* Maintain aspect ratio */
+    max-width: 100%; /* Responsive logo */
+    width: 250px; /* Set a fixed width for large screens */
+    margin-left: 40%;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between; /* Space between logo and navigation */
+    align-items: center; /* Center items vertically */
+    width: 100%; /* Full width */
+    padding: 20px;
+    margin-right: 6%;
+}
+
+/* Navigation list for large screens */
+.nav-list {
+    display: flex; /* Show navigation items in a row by default */
+    list-style: none; /* Remove default list styling */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+}
+
+.nav-list li {
+    margin: 0 10px; /* Add some margin for spacing */
+}
+
+.nav-list li a {
+    display: inline-block; /* Make it behave like a button */
+    background-color: #D6A600; /* Brownish yellow color */
+    color: white; /* Text color */
+    padding: 15px 20px; /* Padding: 15px top/bottom, 20px left/right */
+    border-radius: 5px; /* Rounded corners */
+    text-decoration: none; /* No underline */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.nav-list li a:hover {
+    background-color: #B58F00; /* Darker shade on hover */
+}
+
+.nav-toggle {
+    display: none; /* Hide toggle button on large screens */
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px; /* Adjust size as needed */
+    cursor: pointer;
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+.phone-button {
+    display: inline-flex; /* Use flexbox for alignment */
+    align-items: center; /* Center items vertically */
+    background-color: #D6A600; /* Button color */
+    color: white; /* Text color */
+    padding: 10px 20px; /* Padding for button */
+    border-radius: 5px; /* Slightly rounded corners */
+    text-decoration: none; /* No underline */
+    transition: all 0.3s ease; /* Smooth transition for hover effect */
+    font-size: 1em; /* Font size */
+    font-family: 'Rubik', sans-serif; /* Font family */
+}
+
+.phone-button i {
+    margin-right: 8px; /* Space between icon and text */
+}
+
+/* Hover Effect */
+.phone-button:hover {
+    background-color: #B58F00; /* Darker shade on hover */
+}
+
+
+section {
+    background: #ffffff;
+    padding: 15px;
+    
+}
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background: #35424a;
+    color: #ffffff;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+h1 {
+    color: #007BFF;
+}
+
+.feature-text {
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically */
+    text-align: center; /* Center text within the container */
+    padding: 20px; /* Optional: add some padding */
+    color: white;
+    font-family: 'Rubik', sans-serif;
+    
+}
+
+.feature-text h2 {
+    font-size: 4em; /* Responsive font size */
+    color: white;
+}
+
+.feature-text-p {
+    font-weight: normal; /* Set font weight to normal */
+    font-size: 90%; /* Set a smaller font size */
+    font-family: 'Roboto Slab', sans-serif; /* Set the font to Karla */
+    color: white;
+}
+.feature-text-h2 {
+    font-size: 120%; /* Set a smaller font size (adjust as needed) */
+    font-family: 'Rubik', sans-serif; /* Set the font to Karla */
+    line-height: 1.0em;
+}
+
+.header-container {
+    background: url('/bgs/7.jpg') no-repeat top center; /* Set the background image */
+    background-size: cover; /* Cover the entire div */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margin */
+    min-height: 400px; /* Set a minimum height for the header container */
+}
+
+.nav-panel {
+    display: none; /* Hide the navigation panel by default */
+    position: fixed; /* Fix the position to fill the screen */
+    top: 0;
+    left: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgba(0, 0, 0, 0.9); /* Dark background */
+    z-index: 1000; /* Ensure it appears above other content */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items */
+    justify-content: center; /* Center items */
+}
+
+.close-nav {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 30px; /* Size of the close button */
+    position: absolute; /* Position it at the top right */
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+    .logo img {
+        width: 200px; /* Larger size for phone screens */
+    }
+
+    nav {
+        justify-content: flex-end; /* Align items to the right on small screens */
+    }
+
+    .nav-list {
+        display: flex; /* Show navigation items in a row on larger screens */
+        flex-direction: column; /* Stack navigation items vertically on small screens */
+        width: 100%; /* Full width */
+        background-color: rgba(0, 0, 0, 0.9); /* Optional: background for better visibility */
+        align-items: center; /* Center items horizontally */
+    }
+
+    .nav-list li {
+        margin: 10px 0; /* Add some margin for spacing */
+        width: 100%; /* Make each button fill the width */
+        text-align: center; /* Center text within each button */
+    }
+
+    .nav-toggle {
+        display: block; /* Show toggle button on small screens */
+    }
+
+    .feature-text h2 {
+        font-size: 2em; /* Smaller font size for smaller screens */
+    }
+
+    .feature-text-p {
+        font-size: 0.8em; /* Smaller font size for smaller screens */
+    }
+
+    .service-button {
+        width: auto; /* Ensure button does not fill the screen on small screens */
+        margin: 10px auto; /* Center the button */
+    }
+
+    .outside-nav-list {
+        display: none; /* Hide the navigation list on small screens */
+    }
+}
+
+@media (min-width: 769px) {
+    .nav-toggle {
+        display: none; /* Hide toggle button on large screens */
+    }
+}
+
+.outside-nav-list {
+    display: flex; /* Show navigation items in a row on large screens */
+    list-style: none; /* Remove default list styling */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+    margin-left: auto; /* Push the list to the right */
+}
+
+.outside-nav-list li {
+    margin: 0 5px; /* Add some margin for spacing */
+}
+
+.outside-nav-list li a {
+    display: inline; /* Make it behave like a link */
+    color: white; /* Text color */
+    text-decoration: none; /* No underline */
+    padding: 10px; /* Optional padding for better click area */
+    transition: color 0.3s; /* Smooth transition for hover effect */
+}
+
+.outside-nav-list li a:hover {
+    color: #ccc; /* Change color on hover for better visibility */
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+    .outside-nav-list {
+        display: none; /* Hide the outside-nav-list on small screens */
+    }
+}
+
+/* General button styles */
+button, .nav-list li a {
+    background-color: #D6A600; /* Brownish yellow color */
+    color: white; /* Text color */
+    border: none; /* Remove default border */
+    padding: 10px 20px; /* Padding for buttons */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+button:hover, .nav-list li a:hover {
+    background-color: #B58F00; /* Darker shade on hover */
+}
+
+.footer-section {
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Space out the sections */
+    align-items: center; /* Center items vertically */
+    padding: 20px; /* Padding around the footer */
+    background-color: #ffffff; /* Light background color */
+}
+
+.footer-left {
+    flex: 1; /* Allow left section to take available space */
+}
+
+.footer-center {
+    flex: 1; /* Allow center section to take available space */
+    display: flex; /* Use flexbox for centering */
+    justify-content: center; /* Center the logo horizontally */
+}
+
+.footer-right {
+    flex: 1; /* Allow right section to take available space */
+    text-align: right; /* Align text to the right */
+}
+
+.footer-nav {
+    display: flex; /* Use flexbox for navigation items */
+    gap: 15px; /* Space between navigation items */
+}
+
+.footer-nav a {
+    text-decoration: none; /* No underline */
+    color: #536942; /* Dark green text color */
+    font-family: 'Rubik', sans-serif; /* Font family */
+}
+
+.footer-nav a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+.footer-logo {
+    max-width: 100px; /* Set a max width for the logo */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.footer-right {
+    color: #536942; /* Dark green text color */
+    font-family: 'Karla', sans-serif; /* Font family */
+}
+
+/* Media Query for Smaller Screens */
+@media (max-width: 768px) {
+    .footer-section {
+        flex-direction: column; /* Stack footer elements vertically */
+        align-items: center; /* Center items horizontally */
+    }
+
+    .footer-left,
+    .footer-center,
+    .footer-right {
+        width: 100%; /* Make each section take full width */
+        text-align: center; /* Center text for smaller screens */
+        margin-bottom: 10px; /* Add space between sections */
+    }
+
+    .footer-nav {
+        flex-direction: column; /* Stack navigation items vertically */
+        gap: 10px; /* Space between navigation items */
+    }
+
+    .footer-logo {
+        max-width: 120px; /* Adjust logo size for smaller screens */
+    }
+}
+
+/* Example navigation styles for the header */
+.header-nav {
+    display: flex; /* Use flexbox for navigation items */
+    gap: 10px; /* Reduce space between navigation items */
+}
+
+.header-nav a {
+    text-decoration: none; /* No underline */
+    color: #536942; /* Dark green text color */
+    font-family: 'Rubik', sans-serif; /* Font family */
+}
+
+/* Add hover effect if needed */
+.header-nav a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+
+.main{
+    background-color: #fff; /* White background for the article */
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Enhanced shadow for depth */
+    text-align: center; /* Center text within the article */
+}
+
+/* Blog Article Styles */
+.blog-article {
+    padding-left: 20%;
+    padding-right: 20%;
+    
+}
+
+.article-content-wrapper {
+    display: flex; /* Use flexbox for layout */
+    align-items: flex-start; /* Align items at the start */
+    justify-content: center; /* Center the content */
+    margin: 80px 0; /* Add margin around the content */
+}
+
+.article-image {
+    max-width: 40%; /* Set a smaller width for the images */
+    height: auto;
+    margin-right: 20px; /* Space between image and text */
+    border-radius: 5px; /* Rounded corners for images */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for images */
+}
+
+.article-text {
+    flex: 1; /* Allow text to take the remaining space */
+    text-align: left; /* Align text to the left */
+    font-family: 'Forum', sans-serif;
+    color: #536942;
+    font-size: 1.8em;
+    text-align: center;
+}
+
+.article-title {
+    font-size: 32px; /* Larger title for emphasis */
+    margin-bottom: 15px;
+    font-weight: 600; /* Semi-bold for a modern look */
+    color: #333; /* Darker color for better contrast */
+    font-family: 'Forum', sans-serif;
+    color: #536942;
+}
+
+.article-content {
+    margin: 0 20px; /* Add left and right margins */
+    margin-bottom: 15px;
+    font-size: 18px; /* Larger font size for content */
+    line-height: 1.6; /* Increased line height for readability */
+}
+
+.review-section {
+    background-color: rgba(83, 105, 66, 0.1); /* Faint dark greenish tint */
+    padding: 40px 20px; /* Padding around the section */
+    text-align: center; /* Center the text */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    font-family: 'Forum', sans-serif; /* Review section font */
+}
+
+.review-indicator {
+    width: 50px; /* Set a fixed width for the indicator image */
+    height: auto; /* Maintain aspect ratio */
+    margin-bottom: 15px; /* Space below the indicator */
+    opacity: 0.5; /* Reduce opacity for the indicator image */
+}
+
+.review-text {
+    font-style: italic; /* Italicize the review text */
+    margin: 15px 0; /* Space above and below the review text */
+    color: #536942; /* Set text color */
+    font-size: 2em; /* Increase font size for the review text */
+    padding: 0 20%; /* 20% padding on the left and right */
+}
+
+.review-author {
+    display: flex; /* Use flexbox for alignment */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+    margin-top: 10px; /* Space above the author section */
+}
+
+.author-avatar {
+    width: 50px; /* Set width for the avatar */
+    height: 50px; /* Set height for the avatar */
+    border-radius: 50%; /* Make the avatar circular */
+    margin-bottom: 5px; /* Space below the avatar */
+}
+
+.author-name {
+    font-size: 0.9em; /* Smaller font size for the author's name */
+    color: #536942; /* Set text color */
+    font-family: 'Rubik', sans-serif;
+}
+
+/* Example navigation styles for the header */
+.header-nav {
+    display: flex; /* Use flexbox for navigation items */
+    gap: 10px; /* Reduce space between navigation items */
+}
+
+.header-nav a {
+    text-decoration: none; /* No underline */
+    color: #536942; /* Dark green text color */
+    font-family: 'Rubik', sans-serif; /* Font family */
+}
+
+/* Add hover effect if needed */
+.header-nav a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+/* Add dropdown styles */
+.outside-nav-list li {
+    position: relative; /* For dropdown positioning */
+}
+
+.services-dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 50%;
+    transform: translateX(-50%) translateY(-10px);
+    background-color: white;
+    min-width: 300px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    z-index: 1000;
+    border-radius: 8px;
+    overflow: hidden;
+    opacity: 0;
+    transition: all 0.3s ease;
+    padding: 8px 0;
+}
+
+/* Triangle pointer */
+.dropdown-content::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 8px solid white;
+}
+
+/* Override the main nav styles for dropdown items */
+.dropdown-content a {
+    display: block !important;
+    background-color: transparent !important;
+    color: #536942 !important;
+    padding: 12px 20px !important;
+    margin: 0 !important;
+    text-decoration: none !important;
+    font-family: 'Rubik', sans-serif !important;
+    font-size: 0.95em !important;
+    text-align: left !important;
+    border-radius: 0 !important;
+    transition: all 0.2s ease !important;
+    border: none !important;
+    white-space: nowrap !important;
+    line-height: 1.4 !important;
+}
+
+.dropdown-content a:hover {
+    background-color: #f8f9fa !important;
+    color: #D6A600 !important;
+    transform: translateX(5px);
+}
+
+/* Show dropdown on hover */
+.services-dropdown:hover .dropdown-content {
+    display: block;
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+/* Update the services button style */
+.services-dropdown > a {
+    position: relative;
+    padding-right: 35px !important;
+}
+
+/* Update arrow indicator */
+.services-dropdown > a::after {
+    content: '▼';
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.7em;
+    transition: transform 0.3s;
+    color: white;
+}
+
+.services-dropdown:hover > a::after {
+    transform: translateY(-50%) rotate(180deg);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .dropdown-content {
+        position: static;
+        transform: none;
+        min-width: 100%;
+        box-shadow: none;
+        margin-top: 5px;
+        background-color: rgba(255, 255, 255, 0.95);
+    }
+
+    .dropdown-content::before {
+        display: none;
+    }
+
+    .dropdown-content a {
+        padding: 12px 15px !important;
+    }
+}
+
+/* Footer dropdown styles */
+.footer-services-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.footer-services-dropdown > a {
+    position: relative;
+    padding-right: 20px !important;
+}
+
+.footer-services-dropdown > a::after {
+    content: '▼';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.7em;
+    transition: transform 0.3s;
+    color: #536942;
+}
+
+.footer-services-dropdown:hover > a::after {
+    transform: translateY(-50%) rotate(180deg);
+}
+
+.footer-dropdown-content {
+    display: none;
+    position: absolute;
+    bottom: calc(100% + 1px);
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    background-color: white;
+    min-width: 300px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    z-index: 1000;
+    border-radius: 8px;
+    overflow: hidden;
+    opacity: 0;
+    transition: all 0.3s ease;
+    padding: 8px 0;
+}
+
+/* Triangle pointer for footer dropdown */
+.footer-dropdown-content::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 8px solid white;
+}
+
+.footer-dropdown-content a {
+    display: block !important;
+    background-color: transparent !important;
+    color: #536942 !important;
+    padding: 12px 20px !important;
+    margin: 0 !important;
+    text-decoration: none !important;
+    font-family: 'Rubik', sans-serif !important;
+    font-size: 0.95em !important;
+    text-align: left !important;
+    border-radius: 0 !important;
+    transition: all 0.2s ease !important;
+    border: none !important;
+    white-space: nowrap !important;
+    line-height: 1.4 !important;
+}
+
+.footer-dropdown-content a:hover {
+    background-color: #f8f9fa !important;
+    color: #D6A600 !important;
+    transform: translateX(5px);
+}
+
+/* Show footer dropdown on hover */
+.footer-services-dropdown:hover .footer-dropdown-content {
+    display: block;
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+/* Responsive adjustments for footer dropdown */
+@media (max-width: 768px) {
+    .footer-dropdown-content {
+        position: static;
+        transform: none;
+        min-width: 100%;
+        box-shadow: none;
+        margin-top: 5px;
+        background-color: rgba(255, 255, 255, 0.95);
+        display: none;
+    }
+
+    .footer-dropdown-content::after {
+        display: none;
+    }
+
+    .footer-services-dropdown > a::after {
+        right: -15px;
+    }
+
+    .footer-dropdown-content a {
+        text-align: center !important;
+        padding: 10px 15px !important;
+    }
+}
+
+/* Show footer dropdown on hover */
+.footer-services-dropdown:hover .footer-dropdown-content {
+    display: block;
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+/* Update responsive adjustments for footer dropdown */
+@media (max-width: 768px) {
+    .footer-services-dropdown {
+        position: static;
+    }
+
+    .footer-services-dropdown > a::after {
+        display: none; /* Hide the dropdown arrow */
+    }
+
+    /* Hide the dropdown content completely on mobile */
+    .footer-services-dropdown:hover .footer-dropdown-content {
+        display: none;
+    }
+
+    .footer-dropdown-content {
+        display: none !important; /* Force hide the dropdown */
+    }
+
+    /* Make the Services link behave like other footer links on mobile */
+    .footer-services-dropdown > a {
+        padding-right: 0 !important;
+    }
+}

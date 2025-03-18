@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="about.css">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Forum&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Karla:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>About - GEPHS</title>
+</head>
+<body>
+    <div class="header-container">
+        <header>
+            <div class="logo">
+                <img src="bgs/logo4000.png" alt="Logo" />
+            </div>
+            <nav>
+                <ul class="outside-nav-list">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li class="services-dropdown">
+                        <a href="/services">Services</a>
+                        <div class="dropdown-content">
+                            <a href="/services/service1.html">Asset Valuation From GEPHS</a>
+                            <a href="/services/service2.html">Field Development & Exploration Studies</a>
+                            <a href="/services/service3.html">Geology & Hydrogeology Services</a>
+                            <a href="/services/service4.html">Environmental Services</a>
+                            <a href="/services/service5.html">Geophysical Services</a>
+                        </div>
+                    </li>
+                    <li><a href="/devices">Devices</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                    <li><a href="tel:+971543557084" class="phone-button">
+                        <i class="fas fa-phone"></i>
+                        Call Us
+                    </a></li>
+                </ul>
+                <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+                <div class="nav-panel">
+                    <button class="close-nav" aria-label="Close navigation">✖</button>
+                    <ul class="nav-list">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/about">About</a></li>
+                        <li><a href="/services">Services</a></li>
+                        <li><a href="/devices">Devices</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                        <li><a href="tel:+971543557084" class="phone-button">
+                            <i class="fas fa-phone"></i>
+                            Call Us
+                        </a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <div class="feature-text">
+            <h2 class="feature-text-h2">About Us</h2>
+        </div>
+    </div>
+
+    <main>
+        <section class="blog-article">
+            <div class="article-content-wrapper">
+                <div class="article-text">
+                    <h3>At GEPHS, we've spent years mastering the basics of Groundwater and Hydrocarbon consulting so you don't have to. We're an Emirati-owned company, proudly serving a diversified clientele across the MENA region and beyond, growing steadily since our inaugural year in 2022. Our expertise branches out into Geological, Environmental, Petroleum, and Hydrogeological Services. We are committed to providing feasible and lucrative solutions for your requirements. Let us be your trusted partner in your exploration journeys.</h3>
+                </div>
+            </div>
+        </section>
+    </main>
+    <section class="review-section">
+        <img src="bgs/quotes.svg" alt="Review Indicator" class="review-indicator">
+        <blockquote class="review-text">
+            "GEPHS has an amazing team of hard working professionals. It has been a pleasure to meet them."
+        </blockquote>
+        <div class="review-author">
+            <img src="bgs/avatar_on_home.jpg" alt="Author Avatar" class="author-avatar">
+            <p class="author-name">Emily Davis, CEO of Company</p>
+        </div>
+    </section>
+
+    <footer class="footer-section">
+        <div class="footer-left">
+            <nav class="footer-nav">
+                <a href="/">Home</a>
+                <a href="/about">About</a>
+                <div class="footer-services-dropdown">
+                    <a href="/services">Services</a>
+                    <div class="footer-dropdown-content">
+                        <a href="/services/service1.html">Asset Valuation From GEPHS</a>
+                        <a href="/services/service2.html">Field Development & Exploration Studies</a>
+                        <a href="/services/service3.html">Geology & Hydrogeology Services</a>
+                        <a href="/services/service4.html">Environmental Services</a>
+                        <a href="/services/service5.html">Geophysical Services</a>
+                    </div>
+                </div>
+                <a href="/devices">Devices</a>
+                <a href="/contact">Contact</a>
+            </nav>
+        </div>
+        <div class="footer-center">
+            <img src="bgs/logo3800-300x180.png" alt="Logo" class="footer-logo">
+        </div>
+        <div class="footer-right">
+            <p>©2025 GEPHS. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const navToggle = document.querySelector('.nav-toggle');
+        const navPanel = document.querySelector('.nav-panel');
+        const outsidenavPanel = document.querySelector('.outside-nav-list');
+        const navList = document.querySelector('.nav-list');
+        const closeNav = document.querySelector('.close-nav');
+
+        navToggle.addEventListener('click', function() {
+            navPanel.style.display = 'flex';
+            navList.style.display = 'flex';
+        });
+
+        closeNav.addEventListener('click', function() {
+            navPanel.style.display = 'none';
+            navList.style.display = 'none';
+        });
+
+        function checkScreenSize() {
+            if (window.innerWidth <= 768) {
+                outsidenavPanel.style.display = 'none';
+            } else {
+                outsidenavPanel.style.display = 'flex';
+            }
+        }
+
+        checkScreenSize();
+
+        window.addEventListener('resize', function() {
+            navPanel.style.display = 'none';
+            navList.style.display = 'none';
+            checkScreenSize();
+        });
+    </script>
+</body>
+</html>
