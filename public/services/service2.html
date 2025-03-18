@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="service.css">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Forum&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Karla:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <title>Field Development & Exploration Studies</title>
 </head>
 <body>
@@ -33,6 +38,21 @@
                         Call Us
                     </a></li>
                 </ul>
+                <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+                <div class="nav-panel">
+                    <button class="close-nav" aria-label="Close navigation">✖</button>
+                    <ul class="nav-list">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/about">About</a></li>
+                        <li><a href="/services">Services</a></li>
+                        <li><a href="/devices">Devices</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                        <li><a href="tel:+971543557084" class="phone-button">
+                            <i class="fas fa-phone"></i>
+                            Call Us
+                        </a></li>
+                    </ul>
+                </div>
             </nav>
         </header>
 
@@ -140,20 +160,18 @@
 
         function checkScreenSize() {
             if (window.innerWidth <= 768) {
-                outsidenavPanel.style.display = 'none'; // Hide outside-nav-list on small screens
+                outsidenavPanel.style.display = 'none';
             } else {
-                outsidenavPanel.style.display = 'flex'; // Show outside-nav-list on larger screens
+                outsidenavPanel.style.display = 'flex';
             }
         }
 
-        // Initial check on page load
         checkScreenSize();
 
-        // Check on window resize
         window.addEventListener('resize', function() {
-            navPanel.style.display = 'none'; // Hide navPanel on resize
-            navList.style.display = 'none'; // Hide navList on resize
-            checkScreenSize(); // Call the function to check screen size
+            navPanel.style.display = 'none';
+            navList.style.display = 'none';
+            checkScreenSize();
         });
     </script>
 </body>
