@@ -77,5 +77,5 @@ app.post('/send-email', async (req, res) => {
 // Other routes will be added here
 
 app.listen(PORT, () => {
-    console.log(`Server is running on iad1-shared-e1-13.dreamhost.com:$22`);
+    console.log(`Server is running on http://localhost:${PORT}`);
 });
