@@ -15,8 +15,8 @@ app.use(express.json());
 const transporter = nodemailer.createTransport({
     service: 'gmail', // or your preferred email service
     auth: {
-        user: 'ali.abdullatif.magnamedia@gmail.com', // Your email
-        pass: 'ledp mfeq gwup qhpl' // Your email password or app-specific password
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_APP_PASSWORD
     }
 });
 
