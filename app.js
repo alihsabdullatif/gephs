@@ -3,7 +3,9 @@ const nodemailer = require('nodemailer');
 const path = require('path');
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = 3000;
+
+require('dotenv').config();
 
 // Serve static files from the "public" directory
 app.use(express.static(path.join(__dirname, 'public')));
@@ -13,11 +15,14 @@ app.use(express.json());
 
 // Email configuration
 const transporter = nodemailer.createTransport({
-    service: 'gmail', // or your preferred email service
-    auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_APP_PASSWORD
-    }
+    host: "smtp.gmail.com",
+    auth:false,
+  auth: {
+    type: "login", // default
+    user: process.env.EMAIL_USER,
+    pass: process.env.EMAIL_APP_PASSWORD
+    
+  }
 });
 
 // Set up routes
@@ -56,7 +61,7 @@ app.post('/send-email', async (req, res) => {
 
     const mailOptions = {
         from: email,
-        to: 'hussam.ghanem@gephs.net', // The email where you want to receive messages
+        to: 'ali.abdullatif.magnamedia@gmail.com', // The email where you want to receive messages
         subject: `New Contact Form Message from ${name}`,
         text: `
             Name: ${name}
